@@ -1,0 +1,18 @@
+services:
+  agora_recorder:
+    # build: .
+    image: lkaopremier/agora-on-premise-recording:v1.0
+    restart: unless-stopped
+    volumes:
+      - ./output:/usr/src/app/output
+    ports:
+      - "4001-4030:4001-4030/udp"
+      - "1082:1080/udp"
+      - "8082:8000/udp"
+      - "25000:25000/udp"
+      - "4000:4000/udp"
+      - "41000:41000/udp"
+      - "9700:9700/udp"
+      - "1082:1080/tcp"
+      - "8082:8000/tcp"
+      - "3000:3000"
